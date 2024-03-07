@@ -1,0 +1,246 @@
+$comment
+	File created using the following command:
+		vcd file Convertidor.msim.vcd -direction
+$end
+$date
+	Wed Mar 06 16:23:21 2024
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module Convertidor_vlg_vec_tst $end
+$var reg 4 ! A [3:0] $end
+$var reg 4 " B [3:0] $end
+$var reg 1 # Cin $end
+$var wire 1 $ DC [6] $end
+$var wire 1 % DC [5] $end
+$var wire 1 & DC [4] $end
+$var wire 1 ' DC [3] $end
+$var wire 1 ( DC [2] $end
+$var wire 1 ) DC [1] $end
+$var wire 1 * DC [0] $end
+$var wire 1 + UN [6] $end
+$var wire 1 , UN [5] $end
+$var wire 1 - UN [4] $end
+$var wire 1 . UN [3] $end
+$var wire 1 / UN [2] $end
+$var wire 1 0 UN [1] $end
+$var wire 1 1 UN [0] $end
+$var wire 1 2 sampler $end
+$scope module i1 $end
+$var wire 1 3 gnd $end
+$var wire 1 4 vcc $end
+$var wire 1 5 unknown $end
+$var tri1 1 6 devclrn $end
+$var tri1 1 7 devpor $end
+$var tri1 1 8 devoe $end
+$var wire 1 9 UN[0]~output_o $end
+$var wire 1 : UN[1]~output_o $end
+$var wire 1 ; UN[2]~output_o $end
+$var wire 1 < UN[3]~output_o $end
+$var wire 1 = UN[4]~output_o $end
+$var wire 1 > UN[5]~output_o $end
+$var wire 1 ? UN[6]~output_o $end
+$var wire 1 @ DC[0]~output_o $end
+$var wire 1 A DC[1]~output_o $end
+$var wire 1 B DC[2]~output_o $end
+$var wire 1 C DC[3]~output_o $end
+$var wire 1 D DC[4]~output_o $end
+$var wire 1 E DC[5]~output_o $end
+$var wire 1 F DC[6]~output_o $end
+$var wire 1 G B[1]~input_o $end
+$var wire 1 H Cin~input_o $end
+$var wire 1 I A[0]~input_o $end
+$var wire 1 J B[0]~input_o $end
+$var wire 1 K A4|cA0|Cout~0_combout $end
+$var wire 1 L A[1]~input_o $end
+$var wire 1 M A4|A1|Cout~0_combout $end
+$var wire 1 N A[2]~input_o $end
+$var wire 1 O B[2]~input_o $end
+$var wire 1 P A4|A2|HA2|Sum~combout $end
+$var wire 1 Q Sum4|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout $end
+$var wire 1 R A[3]~input_o $end
+$var wire 1 S B[3]~input_o $end
+$var wire 1 T A4|A2|Cout~0_combout $end
+$var wire 1 U A4|A3|Cout~0_combout $end
+$var wire 1 V A4|A3|Cout~1_combout $end
+$var wire 1 W A4|A3|HA2|Sum~combout $end
+$var wire 1 X Sum4|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1 $end
+$var wire 1 Y Sum4|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3 $end
+$var wire 1 Z Sum4|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5 $end
+$var wire 1 [ Sum4|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout $end
+$var wire 1 \ Sum4|Mod0|auto_generated|divider|divider|StageOut[16]~14_combout $end
+$var wire 1 ] Sum4|Mod0|auto_generated|divider|divider|StageOut[16]~21_combout $end
+$var wire 1 ^ Sum4|Mod0|auto_generated|divider|divider|StageOut[15]~18_combout $end
+$var wire 1 _ Sum4|Mod0|auto_generated|divider|divider|StageOut[15]~19_combout $end
+$var wire 1 ` Sum4|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1 $end
+$var wire 1 a Sum4|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout $end
+$var wire 1 b Sum4|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout $end
+$var wire 1 c Sum4|Mod0|auto_generated|divider|divider|StageOut[18]~12_combout $end
+$var wire 1 d Sum4|Mod0|auto_generated|divider|divider|StageOut[18]~22_combout $end
+$var wire 1 e Sum4|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout $end
+$var wire 1 f Sum4|Mod0|auto_generated|divider|divider|StageOut[17]~13_combout $end
+$var wire 1 g Sum4|Mod0|auto_generated|divider|divider|StageOut[17]~20_combout $end
+$var wire 1 h Sum4|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3 $end
+$var wire 1 i Sum4|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5 $end
+$var wire 1 j Sum4|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout $end
+$var wire 1 k Sum4|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout $end
+$var wire 1 l Sum4|Mod0|auto_generated|divider|divider|StageOut[22]~16_combout $end
+$var wire 1 m Sum4|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout $end
+$var wire 1 n Sum4|Mod0|auto_generated|divider|divider|StageOut[23]~17_combout $end
+$var wire 1 o A4|A1|HA2|Sum~combout $end
+$var wire 1 p Sum4|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout $end
+$var wire 1 q Sum4|Mod0|auto_generated|divider|divider|StageOut[21]~15_combout $end
+$var wire 1 r A4|cA0|HA2|Sum~0_combout $end
+$var wire 1 s BCDUN|Mux6~0_combout $end
+$var wire 1 t BCDUN|Mux5~0_combout $end
+$var wire 1 u BCDUN|Mux4~0_combout $end
+$var wire 1 v BCDUN|Mux3~0_combout $end
+$var wire 1 w BCDUN|Mux2~0_combout $end
+$var wire 1 x BCDUN|Mux1~0_combout $end
+$var wire 1 y BCDUN|Mux0~0_combout $end
+$var wire 1 z Sum4|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1 $end
+$var wire 1 { Sum4|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3 $end
+$var wire 1 | Sum4|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5 $end
+$var wire 1 } Sum4|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout $end
+$var wire 1 ~ Sum4|Div0|auto_generated|divider|divider|StageOut[18]~19_combout $end
+$var wire 1 !! Sum4|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout $end
+$var wire 1 "! Sum4|Div0|auto_generated|divider|divider|StageOut[18]~12_combout $end
+$var wire 1 #! Sum4|Div0|auto_generated|divider|divider|StageOut[17]~15_combout $end
+$var wire 1 $! Sum4|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout $end
+$var wire 1 %! Sum4|Div0|auto_generated|divider|divider|StageOut[17]~13_combout $end
+$var wire 1 &! Sum4|Div0|auto_generated|divider|divider|StageOut[16]~16_combout $end
+$var wire 1 '! Sum4|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout $end
+$var wire 1 (! Sum4|Div0|auto_generated|divider|divider|StageOut[16]~14_combout $end
+$var wire 1 )! Sum4|Div0|auto_generated|divider|divider|StageOut[15]~18_combout $end
+$var wire 1 *! Sum4|Div0|auto_generated|divider|divider|StageOut[15]~17_combout $end
+$var wire 1 +! Sum4|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1_cout $end
+$var wire 1 ,! Sum4|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3_cout $end
+$var wire 1 -! Sum4|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5_cout $end
+$var wire 1 .! Sum4|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout $end
+$var wire 1 /! Sum4|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout $end
+$var wire 1 0! BCDDC|Mux5~0_combout $end
+$var wire 1 1! BCDDC|Mux3~0_combout $end
+$var wire 1 2! BCDDC|Mux2~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 !
+b1 "
+0#
+1*
+0)
+0(
+0'
+0&
+0%
+0$
+01
+10
+0/
+0.
+1-
+0,
+0+
+x2
+03
+14
+x5
+16
+17
+18
+09
+1:
+0;
+0<
+1=
+0>
+0?
+1@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+1I
+1J
+1K
+0L
+0M
+0N
+0O
+0P
+1Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+1Y
+0Z
+1[
+0\
+0]
+1^
+0_
+1`
+0a
+0b
+0c
+0d
+1e
+0f
+0g
+0h
+0i
+1j
+1k
+0l
+1m
+0n
+1o
+0p
+1q
+0r
+1s
+1t
+0u
+0v
+1w
+0x
+0y
+0z
+1{
+0|
+1}
+0~
+0!!
+0"!
+0#!
+1$!
+0%!
+0&!
+1'!
+0(!
+0)!
+1*!
+1+!
+0,!
+0-!
+1.!
+1/!
+00!
+01!
+02!
+$end
+#1000000

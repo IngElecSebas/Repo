@@ -1,0 +1,39 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity FullAdder is
+
+	port
+	(
+		-- Input ports
+		A : in std_logic;
+		B : in std_logic;
+		Cin : in std_logic;
+
+		-- Output ports
+		Sum : out std_logic;
+		Cout : out std_logic
+	);
+end FullAdder;
+
+architecture arch_FullAdder of FullAdder is
+
+	signal HA1_Sum, HA1_Cout, HA2_Cout : std_logic
+	
+	component HalfAdder
+	port(-- Input ports
+			A : in std_logic;
+			B : in std_logic;
+			-- Output ports
+			Sum : out std_logic;
+			Cout : out std_logic);
+	end component;
+
+begin
+
+	HA1 : HalfAdder port map (A, B, HA1_Sum, HA1_Cout);
+	HA2 : HalfAdder port map (HA1_Sum, Cin, Sum, HA2_Cout);
+	
+	Cout <= HA1_Cout or HA2_Cout after 1 ns;
+
+end arch_FullAdder;

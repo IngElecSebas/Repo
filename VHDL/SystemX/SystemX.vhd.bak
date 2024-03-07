@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity SystemX is
+
+
+	port
+	(
+		-- Input ports
+		A,B,C : in std_logic;
+
+
+		-- Output ports
+		F : out std_logic
+	);
+end SystemX;
+
+
+architecture arch_SystemX of SystemX is
+
+	signal An,Bn,Cn : std_logic;
+
+begin
+
+	An <= not An
+	
+end arch_SystemX;

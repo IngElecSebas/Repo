@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/ASUS/Documents/VHDL/GInv1/GInv1.vhd
+source_file = 1, C:/Users/ASUS/Documents/VHDL/GInv1/db/GInv1.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = GInv1
+instance = comp, \F~output\, F~output, GInv1, 1
+instance = comp, \A~input\, A~input, GInv1, 1

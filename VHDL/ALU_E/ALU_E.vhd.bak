@@ -1,0 +1,56 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity ALU_E is
+
+	port
+	(
+		-- Input ports
+		Ai, Bi : in std_logic_vector (3 downto 0);
+		S0,S1,S2 : in std_logic;
+
+		-- Output ports
+		SALUi : out std_logic_vector (3 downto 0)
+	);
+end ALU_E;
+
+architecture arch_ALU_E of ALU_Eis
+
+	sAi, sBi : integer range 0 to 31;
+	SULi : std_logic_vector (3 downto 0);
+	SAUi : std_logic;
+
+begin
+
+	pLogic : process (Ai, Bi, S0, S1) IS
+	
+	begin
+		if S0 = '0' and S1 = '0' then
+			SULi <= not Ai;
+		elsif S0 = '0' and S1 = '1' then
+			SULi <= not Bi;
+		elsif S0 = '1' and S1 = '0' then
+			SULi <= Ai or (not Bi);	
+		else 
+			SULi <= Ai and Bi;		
+		end if;
+	end process;
+
+	pArith : process 	(sAi, sBi, S0, S1) IS
+	
+	begin
+		if S0 = '0' and S1 = '0' then
+			SAUi <= -sAi + 3;
+		elsif S0 = '0' and S1 = '1' then
+			SAUi <= -sAi -3;
+		elsif S0 = '1' and S1 = '0' then
+			SAUi <= -sBi - 4;
+		else 
+			SAUi <= -sBi - 3;	
+		end if;
+	end process;
+
+end arch_ALU_E;

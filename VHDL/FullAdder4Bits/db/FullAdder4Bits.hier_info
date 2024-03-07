@@ -1,0 +1,121 @@
+|FullAdder4Bits
+A[0] => FullAdder:cA0.A
+A[1] => FullAdder:A1.A
+A[2] => FullAdder:A2.A
+A[3] => FullAdder:A3.A
+B[0] => FullAdder:cA0.B
+B[1] => FullAdder:A1.B
+B[2] => FullAdder:A2.B
+B[3] => FullAdder:A3.B
+Cin => FullAdder:cA0.Cin
+Sum[0] <= FullAdder:cA0.Sum
+Sum[1] <= FullAdder:A1.Sum
+Sum[2] <= FullAdder:A2.Sum
+Sum[3] <= FullAdder:A3.Sum
+Sum[4] <= FullAdder:A3.Cout
+
+
+|FullAdder4Bits|FullAdder:cA0
+A => HalfAdder:HA1.A
+B => HalfAdder:HA1.B
+Cin => HalfAdder:HA2.B
+Sum <= HalfAdder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:cA0|HalfAdder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:cA0|HalfAdder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A1
+A => HalfAdder:HA1.A
+B => HalfAdder:HA1.B
+Cin => HalfAdder:HA2.B
+Sum <= HalfAdder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A1|HalfAdder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A1|HalfAdder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A2
+A => HalfAdder:HA1.A
+B => HalfAdder:HA1.B
+Cin => HalfAdder:HA2.B
+Sum <= HalfAdder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A2|HalfAdder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A2|HalfAdder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A3
+A => HalfAdder:HA1.A
+B => HalfAdder:HA1.B
+Cin => HalfAdder:HA2.B
+Sum <= HalfAdder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A3|HalfAdder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FullAdder4Bits|FullAdder:A3|HalfAdder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

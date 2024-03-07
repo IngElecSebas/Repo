@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity UArith is
+	
+	port
+	(
+		-- Input ports
+		A, B : in integer range 0 to 31;
+		SA0, SA1 : in std_logic;
+		-- Output ports
+		S_Out : out integer range 0 to 31
+	);
+end UArith;
+
+architecture arch_UArith of UArith is
+
+	
+
+begin
+	
+	if SA0 = '0' and SA1 = '0' then
+		S_Out <= -1* A + 3;
+	elsif SA0 = '0' and SA1 = '1' then
+		S_Out <= -1 *A - 3;
+	elsif SA0 = '1' and SA1 = '0' then
+		S_Out <= - *B - 4;
+	else 
+		S_Out <= -* B - 3;	
+	end if;	
+					
+end arch_UArith;
+
+
+	

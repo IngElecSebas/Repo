@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/ASUS/Documents/VHDL/GAnd3/GAnd3.vhd
+source_file = 1, C:/Users/ASUS/Documents/VHDL/GAnd3/db/GAnd3.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = GAnd3
+instance = comp, \F~output\, F~output, GAnd3, 1
+instance = comp, \C~input\, C~input, GAnd3, 1
+instance = comp, \A~input\, A~input, GAnd3, 1
+instance = comp, \B~input\, B~input, GAnd3, 1
+instance = comp, \F~0\, F~0, GAnd3, 1

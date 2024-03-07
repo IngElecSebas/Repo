@@ -1,0 +1,53 @@
+|SystemX
+A => GInv1:U1.A
+A => GAnd3:U6.A
+B => GInv1:U2.A
+B => GAnd3:U5.B
+B => GAnd3:U6.B
+C => GInv1:U3.A
+F << GOr3:U7.F
+
+
+|SystemX|GInv1:U1
+A => F.DATAIN
+F <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SystemX|GInv1:U2
+A => F.DATAIN
+F <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SystemX|GInv1:U3
+A => F.DATAIN
+F <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SystemX|GAnd3:U4
+A => F.IN0
+B => F.IN1
+C => F.IN1
+F <= F.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SystemX|GAnd3:U5
+A => F.IN0
+B => F.IN1
+C => F.IN1
+F <= F.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SystemX|GAnd3:U6
+A => F.IN0
+B => F.IN1
+C => F.IN1
+F <= F.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SystemX|GOr3:U7
+A => F.IN0
+B => F.IN1
+C => F.IN1
+F <= F.DB_MAX_OUTPUT_PORT_TYPE
+
+

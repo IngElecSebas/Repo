@@ -1,0 +1,417 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
+
+// DATE "03/05/2024 17:25:58"
+
+// 
+// Device: Altera EP3C16F484C6 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module DivFreq (
+	clk,
+	out1,
+	out2);
+input 	clk;
+output 	out1;
+output 	out2;
+
+// Design Ports Information
+// out1	=>  Location: PIN_P5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// out2	=>  Location: PIN_P8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_G2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \out1~output_o ;
+wire \out2~output_o ;
+wire \clk~input_o ;
+wire \clk~inputclkctrl_outclk ;
+wire \contador1~2_combout ;
+wire \contador1~1_combout ;
+wire \contador1~0_combout ;
+wire \out1~0_combout ;
+wire \out1~reg0_q ;
+wire \reloj:contador2[0]~0_combout ;
+wire \reloj:contador2[0]~q ;
+wire \contador2~1_combout ;
+wire \reloj:contador2[2]~q ;
+wire \contador2~0_combout ;
+wire \reloj:contador2[1]~q ;
+wire \out2~0_combout ;
+wire \out2~reg0_q ;
+wire [2:0] contador1;
+
+
+// Location: IOOBUF_X0_Y8_N9
+cycloneiii_io_obuf \out1~output (
+	.i(\out1~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\out1~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \out1~output .bus_hold = "false";
+defparam \out1~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y2_N16
+cycloneiii_io_obuf \out2~output (
+	.i(\out2~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\out2~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \out2~output .bus_hold = "false";
+defparam \out2~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y14_N1
+cycloneiii_io_ibuf \clk~input (
+	.i(clk),
+	.ibar(gnd),
+	.o(\clk~input_o ));
+// synopsys translate_off
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G4
+cycloneiii_clkctrl \clk~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\clk~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\clk~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \clk~inputclkctrl .clock_type = "global clock";
+defparam \clk~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y8_N18
+cycloneiii_lcell_comb \contador1~2 (
+// Equation(s):
+// \contador1~2_combout  = (contador1[2] & ((!contador1[1]))) # (!contador1[2] & (contador1[0] & contador1[1]))
+
+	.dataa(contador1[0]),
+	.datab(gnd),
+	.datac(contador1[2]),
+	.datad(contador1[1]),
+	.cin(gnd),
+	.combout(\contador1~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \contador1~2 .lut_mask = 16'h0AF0;
+defparam \contador1~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y8_N19
+dffeas \contador1[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\contador1~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(contador1[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \contador1[2] .is_wysiwyg = "true";
+defparam \contador1[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y8_N28
+cycloneiii_lcell_comb \contador1~1 (
+// Equation(s):
+// \contador1~1_combout  = (contador1[1] & (!contador1[2] & !contador1[0])) # (!contador1[1] & ((contador1[0])))
+
+	.dataa(gnd),
+	.datab(contador1[2]),
+	.datac(contador1[1]),
+	.datad(contador1[0]),
+	.cin(gnd),
+	.combout(\contador1~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \contador1~1 .lut_mask = 16'h0F30;
+defparam \contador1~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y8_N29
+dffeas \contador1[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\contador1~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(contador1[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \contador1[1] .is_wysiwyg = "true";
+defparam \contador1[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y8_N6
+cycloneiii_lcell_comb \contador1~0 (
+// Equation(s):
+// \contador1~0_combout  = (!contador1[0] & ((!contador1[2]) # (!contador1[1])))
+
+	.dataa(gnd),
+	.datab(contador1[1]),
+	.datac(contador1[0]),
+	.datad(contador1[2]),
+	.cin(gnd),
+	.combout(\contador1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \contador1~0 .lut_mask = 16'h030F;
+defparam \contador1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y8_N7
+dffeas \contador1[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\contador1~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(contador1[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \contador1[0] .is_wysiwyg = "true";
+defparam \contador1[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y8_N8
+cycloneiii_lcell_comb \out1~0 (
+// Equation(s):
+// \out1~0_combout  = \out1~reg0_q  $ (((!contador1[0] & (contador1[2] & contador1[1]))))
+
+	.dataa(contador1[0]),
+	.datab(contador1[2]),
+	.datac(\out1~reg0_q ),
+	.datad(contador1[1]),
+	.cin(gnd),
+	.combout(\out1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out1~0 .lut_mask = 16'hB4F0;
+defparam \out1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y8_N9
+dffeas \out1~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\out1~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\out1~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \out1~reg0 .is_wysiwyg = "true";
+defparam \out1~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y2_N18
+cycloneiii_lcell_comb \reloj:contador2[0]~0 (
+// Equation(s):
+// \reloj:contador2[0]~0_combout  = !\reloj:contador2[0]~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\reloj:contador2[0]~q ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\reloj:contador2[0]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \reloj:contador2[0]~0 .lut_mask = 16'h0F0F;
+defparam \reloj:contador2[0]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y2_N19
+dffeas \reloj:contador2[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\reloj:contador2[0]~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\reloj:contador2[0]~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \reloj:contador2[0] .is_wysiwyg = "true";
+defparam \reloj:contador2[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y2_N20
+cycloneiii_lcell_comb \contador2~1 (
+// Equation(s):
+// \contador2~1_combout  = (\reloj:contador2[2]~q  & ((!\reloj:contador2[0]~q ))) # (!\reloj:contador2[2]~q  & (\reloj:contador2[1]~q  & \reloj:contador2[0]~q ))
+
+	.dataa(\reloj:contador2[1]~q ),
+	.datab(gnd),
+	.datac(\reloj:contador2[2]~q ),
+	.datad(\reloj:contador2[0]~q ),
+	.cin(gnd),
+	.combout(\contador2~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \contador2~1 .lut_mask = 16'h0AF0;
+defparam \contador2~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y2_N21
+dffeas \reloj:contador2[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\contador2~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\reloj:contador2[2]~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \reloj:contador2[2] .is_wysiwyg = "true";
+defparam \reloj:contador2[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y2_N6
+cycloneiii_lcell_comb \contador2~0 (
+// Equation(s):
+// \contador2~0_combout  = (\reloj:contador2[1]~q  & ((!\reloj:contador2[0]~q ))) # (!\reloj:contador2[1]~q  & (!\reloj:contador2[2]~q  & \reloj:contador2[0]~q ))
+
+	.dataa(gnd),
+	.datab(\reloj:contador2[2]~q ),
+	.datac(\reloj:contador2[1]~q ),
+	.datad(\reloj:contador2[0]~q ),
+	.cin(gnd),
+	.combout(\contador2~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \contador2~0 .lut_mask = 16'h03F0;
+defparam \contador2~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y2_N7
+dffeas \reloj:contador2[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\contador2~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\reloj:contador2[1]~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \reloj:contador2[1] .is_wysiwyg = "true";
+defparam \reloj:contador2[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y2_N16
+cycloneiii_lcell_comb \out2~0 (
+// Equation(s):
+// \out2~0_combout  = \out2~reg0_q  $ (((!\reloj:contador2[1]~q  & (\reloj:contador2[0]~q  & \reloj:contador2[2]~q ))))
+
+	.dataa(\reloj:contador2[1]~q ),
+	.datab(\reloj:contador2[0]~q ),
+	.datac(\out2~reg0_q ),
+	.datad(\reloj:contador2[2]~q ),
+	.cin(gnd),
+	.combout(\out2~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out2~0 .lut_mask = 16'hB4F0;
+defparam \out2~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y2_N17
+dffeas \out2~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\out2~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\out2~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \out2~reg0 .is_wysiwyg = "true";
+defparam \out2~reg0 .power_up = "low";
+// synopsys translate_on
+
+assign out1 = \out1~output_o ;
+
+assign out2 = \out2~output_o ;
+
+endmodule

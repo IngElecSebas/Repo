@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/ASUS/Documents/VHDL/GOr3/GOr3.vhd
+source_file = 1, C:/Users/ASUS/Documents/VHDL/GAnd3/GAnd3.vhd
+source_file = 1, C:/Users/ASUS/Documents/VHDL/GInv1/GInv1.vhd
+source_file = 1, C:/Users/ASUS/Documents/VHDL/SystemX/SystemX.vhd
+source_file = 1, C:/Users/ASUS/Documents/VHDL/SystemX/db/SystemX.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = SystemX
+instance = comp, \F~output\, F~output, SystemX, 1
+instance = comp, \C~input\, C~input, SystemX, 1
+instance = comp, \B~input\, B~input, SystemX, 1
+instance = comp, \A~input\, A~input, SystemX, 1
+instance = comp, \U7|F~0\, U7|F~0, SystemX, 1
