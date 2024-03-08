@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity DivFreq50 is
+    port (
+        clockDiv : in std_logic;              -- Entrada del reloj de 50 MHz
+        resetDiv : in std_logic;            -- Entrada de reset
+        divided_clk : out std_logic      -- Salida del reloj dividido
+    );
+end entity DivFreq50;
+
+architecture arch_DivFreq50 of DivFreq50 is
+
+    constant DIVIDER_VALUE : integer := 50000000;  -- Valor para dividir 50 MHz a 1 Hz
+    signal contador : unsigned(24 downto 0) := (others => '0');  -- Contador de 25 bits
+	 
+begin
+    process (clockDiv, resetDiv)
+    begin
+        if resetDiv = '1' then
+            contador <= (others => '0');  -- Reiniciar el contador en caso de reset
+            divided_clk <= '0';          -- Asegurar que la salida sea baja durante el reset
+        elsif rising_edge(clockDiv) then      -- Solo actuar en flanco de subida del reloj
+            if contador = DIVIDER_VALUE - 1 then
+                contador <= (others => '0');  -- Reiniciar el contador cuando alcanza el valor deseado
+                divided_clk <= not divided_clk;  -- Invertir la salida del reloj dividido
+            else
+                contador <= contador + 1;  -- Incrementar el contador
+            end if;
+        end if;
+    end process;
+end architecture arch_DivFreq50;

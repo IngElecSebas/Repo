@@ -25,11 +25,11 @@ begin
 		if clk'event and clk='1' then
 			contador1 <= contador1 + 1;
 			contador2 := contador2 + 1;
-			if contador1 = 6 then
+			if contador1 = 2 then
 				out1 <= not out1;
 				contador1 <= 0;
 			end if;
-			if contador2 = 6 then
+			if contador2 = 3 then
 				out2 <= not out2;
 				contador2 := 0;
 			end if;

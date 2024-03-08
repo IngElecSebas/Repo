@@ -1,0 +1,1516 @@
+TimeQuest Timing Analyzer report for DivFreq50
+Thu Mar 07 21:58:39 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clockDiv'
+ 13. Slow 1200mV 85C Model Hold: 'clockDiv'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'clockDiv'
+ 15. Clock to Output Times
+ 16. Minimum Clock to Output Times
+ 17. Slow 1200mV 85C Model Metastability Report
+ 18. Slow 1200mV 0C Model Fmax Summary
+ 19. Slow 1200mV 0C Model Setup Summary
+ 20. Slow 1200mV 0C Model Hold Summary
+ 21. Slow 1200mV 0C Model Recovery Summary
+ 22. Slow 1200mV 0C Model Removal Summary
+ 23. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 24. Slow 1200mV 0C Model Setup: 'clockDiv'
+ 25. Slow 1200mV 0C Model Hold: 'clockDiv'
+ 26. Slow 1200mV 0C Model Minimum Pulse Width: 'clockDiv'
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Slow 1200mV 0C Model Metastability Report
+ 30. Fast 1200mV 0C Model Setup Summary
+ 31. Fast 1200mV 0C Model Hold Summary
+ 32. Fast 1200mV 0C Model Recovery Summary
+ 33. Fast 1200mV 0C Model Removal Summary
+ 34. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 35. Fast 1200mV 0C Model Setup: 'clockDiv'
+ 36. Fast 1200mV 0C Model Hold: 'clockDiv'
+ 37. Fast 1200mV 0C Model Minimum Pulse Width: 'clockDiv'
+ 38. Clock to Output Times
+ 39. Minimum Clock to Output Times
+ 40. Fast 1200mV 0C Model Metastability Report
+ 41. Multicorner Timing Analysis Summary
+ 42. Clock to Output Times
+ 43. Minimum Clock to Output Times
+ 44. Board Trace Model Assignments
+ 45. Input Transition Times
+ 46. Slow Corner Signal Integrity Metrics
+ 47. Fast Corner Signal Integrity Metrics
+ 48. Setup Transfers
+ 49. Hold Transfers
+ 50. Report TCCS
+ 51. Report RSKM
+ 52. Unconstrained Paths
+ 53. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; DivFreq50                                          ;
+; Device Family      ; Cyclone III                                        ;
+; Device Name        ; EP3C16F484C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 10          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 10          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-10        ; < 0.1%      ;
+;     Processors 11-12       ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; clockDiv   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clockDiv } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                       ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; 325.2 MHz ; 250.0 MHz       ; clockDiv   ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++----------+--------+-----------------+
+; Clock    ; Slack  ; End Point TNS   ;
++----------+--------+-----------------+
+; clockDiv ; -2.075 ; -36.170         ;
++----------+--------+-----------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++----------+-------+-----------------+
+; Clock    ; Slack ; End Point TNS   ;
++----------+-------+-----------------+
+; clockDiv ; 0.344 ; 0.000           ;
++----------+-------+-----------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++----------+--------+-------------------------------+
+; Clock    ; Slack  ; End Point TNS                 ;
++----------+--------+-------------------------------+
+; clockDiv ; -3.000 ; -30.000                       ;
++----------+--------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clockDiv'                                                                ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; -2.075 ; cuenta[1]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 3.008      ;
+; -2.052 ; cuenta[1]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.985      ;
+; -1.999 ; cuenta[14] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.425     ; 2.569      ;
+; -1.994 ; cuenta[0]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.927      ;
+; -1.971 ; cuenta[0]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.904      ;
+; -1.969 ; cuenta[0]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.251      ;
+; -1.965 ; cuenta[0]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.899      ;
+; -1.964 ; cuenta[1]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.246      ;
+; -1.960 ; cuenta[1]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.894      ;
+; -1.959 ; cuenta[21] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.424     ; 2.530      ;
+; -1.957 ; cuenta[3]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.890      ;
+; -1.942 ; cuenta[4]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.875      ;
+; -1.934 ; cuenta[3]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.867      ;
+; -1.930 ; cuenta[14] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.425     ; 2.500      ;
+; -1.916 ; cuenta[11] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.849      ;
+; -1.911 ; cuenta[20] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.845      ;
+; -1.902 ; cuenta[2]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.835      ;
+; -1.895 ; cuenta[10] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.828      ;
+; -1.890 ; cuenta[21] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.424     ; 2.461      ;
+; -1.873 ; cuenta[14] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.424     ; 2.444      ;
+; -1.873 ; cuenta[4]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.806      ;
+; -1.871 ; cuenta[11] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.804      ;
+; -1.866 ; cuenta[14] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.424     ; 2.437      ;
+; -1.865 ; cuenta[14] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.424     ; 2.436      ;
+; -1.860 ; cuenta[1]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.793      ;
+; -1.860 ; cuenta[8]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.793      ;
+; -1.858 ; cuenta[2]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.791      ;
+; -1.857 ; cuenta[1]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.791      ;
+; -1.854 ; cuenta[2]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.136      ;
+; -1.851 ; cuenta[10] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.784      ;
+; -1.850 ; cuenta[0]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.132      ;
+; -1.850 ; cuenta[2]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.784      ;
+; -1.846 ; cuenta[3]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.128      ;
+; -1.846 ; cuenta[1]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.128      ;
+; -1.842 ; cuenta[3]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.776      ;
+; -1.842 ; cuenta[20] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.776      ;
+; -1.840 ; cuenta[0]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.774      ;
+; -1.840 ; cuenta[1]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.774      ;
+; -1.835 ; cuenta[5]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.768      ;
+; -1.833 ; cuenta[2]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.766      ;
+; -1.833 ; cuenta[21] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.423     ; 2.405      ;
+; -1.826 ; cuenta[21] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.423     ; 2.398      ;
+; -1.826 ; cuenta[0]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.760      ;
+; -1.825 ; cuenta[21] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.423     ; 2.397      ;
+; -1.824 ; cuenta[14] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.425     ; 2.394      ;
+; -1.820 ; cuenta[1]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.754      ;
+; -1.817 ; cuenta[19] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.750      ;
+; -1.816 ; cuenta[4]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.750      ;
+; -1.816 ; cuenta[8]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.749      ;
+; -1.812 ; cuenta[5]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.745      ;
+; -1.809 ; cuenta[4]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.743      ;
+; -1.808 ; cuenta[4]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.742      ;
+; -1.805 ; cuenta[22] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.739      ;
+; -1.801 ; cuenta[6]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.734      ;
+; -1.794 ; cuenta[25] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.425     ; 2.364      ;
+; -1.790 ; cuenta[11] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.724      ;
+; -1.785 ; cuenta[20] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.060     ; 2.720      ;
+; -1.784 ; cuenta[21] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.424     ; 2.355      ;
+; -1.783 ; cuenta[11] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.717      ;
+; -1.782 ; cuenta[11] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.716      ;
+; -1.779 ; cuenta[0]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.712      ;
+; -1.778 ; cuenta[20] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.060     ; 2.713      ;
+; -1.777 ; cuenta[20] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.060     ; 2.712      ;
+; -1.776 ; cuenta[0]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.710      ;
+; -1.771 ; cuenta[3]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.704      ;
+; -1.769 ; cuenta[10] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.703      ;
+; -1.769 ; cuenta[2]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.703      ;
+; -1.768 ; cuenta[2]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.702      ;
+; -1.767 ; cuenta[4]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.700      ;
+; -1.762 ; cuenta[10] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.696      ;
+; -1.761 ; cuenta[10] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.695      ;
+; -1.751 ; cuenta[0]  ; cuenta[13] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.685      ;
+; -1.751 ; cuenta[1]  ; cuenta[13] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.685      ;
+; -1.750 ; cuenta[17] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.683      ;
+; -1.748 ; cuenta[19] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.681      ;
+; -1.746 ; cuenta[15] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.679      ;
+; -1.742 ; cuenta[11] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.675      ;
+; -1.742 ; cuenta[4]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.024      ;
+; -1.742 ; cuenta[3]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.675      ;
+; -1.739 ; cuenta[3]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.673      ;
+; -1.736 ; cuenta[22] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.670      ;
+; -1.736 ; cuenta[20] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.670      ;
+; -1.735 ; cuenta[2]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.017      ;
+; -1.732 ; cuenta[6]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.665      ;
+; -1.731 ; cuenta[7]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.664      ;
+; -1.730 ; cuenta[8]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.664      ;
+; -1.728 ; cuenta[3]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.010      ;
+; -1.725 ; cuenta[25] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.425     ; 2.295      ;
+; -1.725 ; cuenta[2]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.659      ;
+; -1.724 ; cuenta[5]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 3.006      ;
+; -1.723 ; cuenta[8]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.657      ;
+; -1.722 ; cuenta[3]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.656      ;
+; -1.722 ; cuenta[8]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.656      ;
+; -1.722 ; cuenta[10] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.655      ;
+; -1.720 ; cuenta[12] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.653      ;
+; -1.720 ; cuenta[5]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.654      ;
+; -1.712 ; cuenta[12] ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.287      ; 2.994      ;
+; -1.708 ; cuenta[7]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.062     ; 2.641      ;
+; -1.708 ; cuenta[14] ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; -0.076     ; 2.627      ;
+; -1.708 ; cuenta[12] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.061     ; 2.642      ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clockDiv'                                                                ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 0.344 ; salida     ; salida     ; clockDiv     ; clockDiv    ; 0.000        ; 0.076      ; 0.577      ;
+; 0.559 ; cuenta[5]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.778      ;
+; 0.561 ; cuenta[6]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.780      ;
+; 0.569 ; cuenta[10] ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.788      ;
+; 0.569 ; cuenta[3]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.788      ;
+; 0.570 ; cuenta[16] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 0.788      ;
+; 0.570 ; cuenta[11] ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.789      ;
+; 0.570 ; cuenta[9]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.789      ;
+; 0.570 ; cuenta[8]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.789      ;
+; 0.570 ; cuenta[2]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.789      ;
+; 0.571 ; cuenta[24] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 0.789      ;
+; 0.571 ; cuenta[18] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 0.789      ;
+; 0.571 ; cuenta[1]  ; cuenta[1]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.790      ;
+; 0.573 ; cuenta[4]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.792      ;
+; 0.587 ; cuenta[0]  ; cuenta[0]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 0.806      ;
+; 0.790 ; cuenta[20] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.424      ; 1.371      ;
+; 0.833 ; cuenta[5]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.052      ;
+; 0.844 ; cuenta[9]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.063      ;
+; 0.844 ; cuenta[3]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.063      ;
+; 0.845 ; cuenta[1]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.064      ;
+; 0.846 ; cuenta[7]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.065      ;
+; 0.850 ; cuenta[21] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.076      ; 1.083      ;
+; 0.850 ; cuenta[6]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.069      ;
+; 0.857 ; cuenta[10] ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.076      ;
+; 0.857 ; cuenta[0]  ; cuenta[1]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.076      ;
+; 0.858 ; cuenta[2]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.077      ;
+; 0.858 ; cuenta[8]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.077      ;
+; 0.859 ; cuenta[0]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.078      ;
+; 0.860 ; cuenta[16] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.078      ;
+; 0.860 ; cuenta[4]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.079      ;
+; 0.860 ; cuenta[8]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.079      ;
+; 0.860 ; cuenta[2]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.079      ;
+; 0.861 ; cuenta[22] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.079      ;
+; 0.862 ; cuenta[4]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.081      ;
+; 0.863 ; cuenta[22] ; cuenta[22] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.081      ;
+; 0.864 ; cuenta[7]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.083      ;
+; 0.901 ; cuenta[18] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.424      ; 1.482      ;
+; 0.933 ; cuenta[22] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.515      ;
+; 0.935 ; cuenta[24] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.517      ;
+; 0.945 ; cuenta[5]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.164      ;
+; 0.954 ; cuenta[9]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.173      ;
+; 0.954 ; cuenta[3]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.173      ;
+; 0.955 ; cuenta[1]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.174      ;
+; 0.956 ; cuenta[7]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.175      ;
+; 0.956 ; cuenta[3]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.175      ;
+; 0.957 ; cuenta[1]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.176      ;
+; 0.957 ; cuenta[25] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.076      ; 1.190      ;
+; 0.958 ; cuenta[7]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.177      ;
+; 0.960 ; cuenta[6]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.179      ;
+; 0.962 ; cuenta[6]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.181      ;
+; 0.969 ; cuenta[20] ; cuenta[20] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.187      ;
+; 0.969 ; cuenta[0]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.188      ;
+; 0.970 ; cuenta[8]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.189      ;
+; 0.970 ; cuenta[2]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.189      ;
+; 0.971 ; cuenta[0]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.190      ;
+; 0.972 ; cuenta[2]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.191      ;
+; 0.974 ; cuenta[20] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.192      ;
+; 0.974 ; cuenta[4]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.193      ;
+; 0.985 ; cuenta[15] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.060      ; 1.202      ;
+; 1.012 ; cuenta[16] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.424      ; 1.593      ;
+; 1.013 ; cuenta[19] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.423      ; 1.593      ;
+; 1.021 ; cuenta[17] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.060      ; 1.238      ;
+; 1.035 ; cuenta[11] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.617      ;
+; 1.046 ; cuenta[20] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.628      ;
+; 1.047 ; cuenta[22] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.629      ;
+; 1.049 ; cuenta[13] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.424      ; 1.630      ;
+; 1.050 ; cuenta[10] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.632      ;
+; 1.055 ; cuenta[5]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.274      ;
+; 1.057 ; cuenta[5]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.276      ;
+; 1.067 ; cuenta[1]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.286      ;
+; 1.068 ; cuenta[7]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.287      ;
+; 1.068 ; cuenta[3]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.287      ;
+; 1.069 ; cuenta[1]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.288      ;
+; 1.069 ; cuenta[11] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.287      ;
+; 1.072 ; cuenta[6]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.291      ;
+; 1.081 ; cuenta[0]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.300      ;
+; 1.083 ; cuenta[0]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.302      ;
+; 1.083 ; cuenta[13] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.060      ; 1.300      ;
+; 1.084 ; cuenta[4]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.303      ;
+; 1.084 ; cuenta[2]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.303      ;
+; 1.084 ; cuenta[10] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.302      ;
+; 1.085 ; cuenta[18] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.303      ;
+; 1.086 ; cuenta[4]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.305      ;
+; 1.097 ; cuenta[15] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.060      ; 1.314      ;
+; 1.139 ; cuenta[19] ; cuenta[19] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.357      ;
+; 1.141 ; cuenta[6]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.360      ;
+; 1.147 ; cuenta[9]  ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.729      ;
+; 1.154 ; cuenta[20] ; cuenta[22] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.372      ;
+; 1.157 ; cuenta[18] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.739      ;
+; 1.160 ; cuenta[20] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.742      ;
+; 1.163 ; cuenta[8]  ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.425      ; 1.745      ;
+; 1.164 ; cuenta[17] ; cuenta[17] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.382      ;
+; 1.167 ; cuenta[5]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.386      ;
+; 1.169 ; cuenta[23] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.076      ; 1.402      ;
+; 1.173 ; cuenta[17] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.423      ; 1.753      ;
+; 1.177 ; cuenta[14] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.076      ; 1.410      ;
+; 1.178 ; cuenta[3]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.397      ;
+; 1.180 ; cuenta[3]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.399      ;
+; 1.181 ; cuenta[1]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.062      ; 1.400      ;
+; 1.181 ; cuenta[9]  ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.061      ; 1.399      ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'clockDiv'                                                              ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clockDiv ; Rise       ; clockDiv                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[0]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[10]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[11]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[12]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[13]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[14]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[15]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[16]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[17]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[18]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[19]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[1]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[20]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[21]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[22]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[23]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[24]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[25]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[2]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[3]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[4]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[5]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[6]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[7]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[8]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[9]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; salida                         ;
+; 0.166  ; 0.350        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[14]                     ;
+; 0.166  ; 0.350        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[21]                     ;
+; 0.166  ; 0.350        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[23]                     ;
+; 0.166  ; 0.350        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[25]                     ;
+; 0.166  ; 0.350        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; salida                         ;
+; 0.186  ; 0.370        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[16]                     ;
+; 0.186  ; 0.370        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[18]                     ;
+; 0.186  ; 0.370        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[20]                     ;
+; 0.186  ; 0.370        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[22]                     ;
+; 0.186  ; 0.370        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[24]                     ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[0]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[10]                     ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[11]                     ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[12]                     ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[13]                     ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[15]                     ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[17]                     ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[19]                     ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[1]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[2]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[3]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[4]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[5]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[6]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[7]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[8]                      ;
+; 0.187  ; 0.371        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[9]                      ;
+; 0.328  ; 0.328        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[14]|clk                 ;
+; 0.328  ; 0.328        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[21]|clk                 ;
+; 0.328  ; 0.328        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[23]|clk                 ;
+; 0.328  ; 0.328        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[25]|clk                 ;
+; 0.328  ; 0.328        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; salida|clk                     ;
+; 0.339  ; 0.339        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~input|o               ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[0]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[10]|clk                 ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[11]|clk                 ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[16]|clk                 ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[18]|clk                 ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[1]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[20]|clk                 ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[22]|clk                 ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[24]|clk                 ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[2]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[3]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[4]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[5]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[6]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[7]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[8]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[9]|clk                  ;
+; 0.349  ; 0.349        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[12]|clk                 ;
+; 0.349  ; 0.349        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[13]|clk                 ;
+; 0.349  ; 0.349        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[15]|clk                 ;
+; 0.349  ; 0.349        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[17]|clk                 ;
+; 0.349  ; 0.349        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[19]|clk                 ;
+; 0.356  ; 0.356        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~inputclkctrl|inclk[0] ;
+; 0.356  ; 0.356        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~inputclkctrl|outclk   ;
+; 0.411  ; 0.627        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[12]                     ;
+; 0.411  ; 0.627        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[13]                     ;
+; 0.411  ; 0.627        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[15]                     ;
+; 0.411  ; 0.627        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[17]                     ;
+; 0.411  ; 0.627        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[19]                     ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[0]                      ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[10]                     ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[11]                     ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[16]                     ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[18]                     ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[1]                      ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[20]                     ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[22]                     ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[24]                     ;
+; 0.412  ; 0.628        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[2]                      ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; divided_clk ; clockDiv   ; 5.971 ; 5.970 ; Rise       ; clockDiv        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; divided_clk ; clockDiv   ; 5.843 ; 5.841 ; Rise       ; clockDiv        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                        ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; 370.1 MHz ; 250.0 MHz       ; clockDiv   ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++----------+--------+----------------+
+; Clock    ; Slack  ; End Point TNS  ;
++----------+--------+----------------+
+; clockDiv ; -1.702 ; -28.992        ;
++----------+--------+----------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++----------+-------+----------------+
+; Clock    ; Slack ; End Point TNS  ;
++----------+-------+----------------+
+; clockDiv ; 0.299 ; 0.000          ;
++----------+-------+----------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++----------+--------+------------------------------+
+; Clock    ; Slack  ; End Point TNS                ;
++----------+--------+------------------------------+
+; clockDiv ; -3.000 ; -30.000                      ;
++----------+--------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clockDiv'                                                                 ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; -1.702 ; cuenta[1]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.641      ;
+; -1.686 ; cuenta[1]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.625      ;
+; -1.684 ; cuenta[14] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.386     ; 2.293      ;
+; -1.642 ; cuenta[21] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.385     ; 2.252      ;
+; -1.636 ; cuenta[0]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.575      ;
+; -1.630 ; cuenta[14] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.385     ; 2.240      ;
+; -1.630 ; cuenta[11] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.569      ;
+; -1.628 ; cuenta[0]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.568      ;
+; -1.622 ; cuenta[10] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.561      ;
+; -1.620 ; cuenta[0]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.559      ;
+; -1.615 ; cuenta[0]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.872      ;
+; -1.612 ; cuenta[4]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.551      ;
+; -1.600 ; cuenta[3]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.539      ;
+; -1.599 ; cuenta[11] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.539      ;
+; -1.595 ; cuenta[1]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.535      ;
+; -1.595 ; cuenta[10] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.535      ;
+; -1.594 ; cuenta[2]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.533      ;
+; -1.592 ; cuenta[8]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.531      ;
+; -1.588 ; cuenta[20] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.528      ;
+; -1.588 ; cuenta[21] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.384     ; 2.199      ;
+; -1.584 ; cuenta[3]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.523      ;
+; -1.582 ; cuenta[1]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.839      ;
+; -1.574 ; cuenta[14] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.385     ; 2.184      ;
+; -1.568 ; cuenta[14] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.385     ; 2.178      ;
+; -1.567 ; cuenta[14] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.385     ; 2.177      ;
+; -1.567 ; cuenta[2]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.507      ;
+; -1.565 ; cuenta[8]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.505      ;
+; -1.558 ; cuenta[4]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.498      ;
+; -1.545 ; cuenta[1]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.485      ;
+; -1.534 ; cuenta[20] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.054     ; 2.475      ;
+; -1.533 ; cuenta[14] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.386     ; 2.142      ;
+; -1.532 ; cuenta[21] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.384     ; 2.143      ;
+; -1.528 ; cuenta[2]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.468      ;
+; -1.526 ; cuenta[21] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.384     ; 2.137      ;
+; -1.525 ; cuenta[21] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.384     ; 2.136      ;
+; -1.522 ; cuenta[2]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.461      ;
+; -1.520 ; cuenta[11] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.460      ;
+; -1.515 ; cuenta[2]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.772      ;
+; -1.514 ; cuenta[11] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.454      ;
+; -1.513 ; cuenta[11] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.453      ;
+; -1.512 ; cuenta[0]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.769      ;
+; -1.509 ; cuenta[0]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.449      ;
+; -1.508 ; cuenta[1]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.447      ;
+; -1.507 ; cuenta[0]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.447      ;
+; -1.502 ; cuenta[4]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.442      ;
+; -1.500 ; cuenta[19] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.439      ;
+; -1.500 ; cuenta[1]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.440      ;
+; -1.497 ; cuenta[22] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.437      ;
+; -1.496 ; cuenta[4]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.436      ;
+; -1.495 ; cuenta[4]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.435      ;
+; -1.494 ; cuenta[5]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.433      ;
+; -1.494 ; cuenta[25] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.386     ; 2.103      ;
+; -1.493 ; cuenta[3]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.433      ;
+; -1.491 ; cuenta[6]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.430      ;
+; -1.491 ; cuenta[21] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.385     ; 2.101      ;
+; -1.486 ; cuenta[10] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.426      ;
+; -1.480 ; cuenta[3]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.737      ;
+; -1.480 ; cuenta[10] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.420      ;
+; -1.480 ; cuenta[1]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.737      ;
+; -1.479 ; cuenta[10] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.419      ;
+; -1.479 ; cuenta[0]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.419      ;
+; -1.479 ; cuenta[11] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.418      ;
+; -1.478 ; cuenta[5]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.417      ;
+; -1.478 ; cuenta[20] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.054     ; 2.419      ;
+; -1.476 ; cuenta[3]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.416      ;
+; -1.472 ; cuenta[20] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.054     ; 2.413      ;
+; -1.472 ; cuenta[1]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.412      ;
+; -1.471 ; cuenta[20] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.054     ; 2.412      ;
+; -1.470 ; cuenta[2]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.410      ;
+; -1.469 ; cuenta[2]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.409      ;
+; -1.467 ; cuenta[10] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.406      ;
+; -1.462 ; cuenta[1]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.402      ;
+; -1.461 ; cuenta[4]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.400      ;
+; -1.457 ; cuenta[7]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.396      ;
+; -1.448 ; cuenta[8]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.388      ;
+; -1.447 ; cuenta[17] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.386      ;
+; -1.446 ; cuenta[19] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.386      ;
+; -1.443 ; cuenta[22] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.054     ; 2.384      ;
+; -1.443 ; cuenta[3]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.383      ;
+; -1.443 ; cuenta[15] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.382      ;
+; -1.442 ; cuenta[0]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.381      ;
+; -1.442 ; cuenta[8]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.382      ;
+; -1.441 ; cuenta[8]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.381      ;
+; -1.440 ; cuenta[25] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.385     ; 2.050      ;
+; -1.437 ; cuenta[6]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.377      ;
+; -1.437 ; cuenta[20] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.377      ;
+; -1.437 ; cuenta[8]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.376      ;
+; -1.436 ; cuenta[0]  ; cuenta[13] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.376      ;
+; -1.434 ; cuenta[12] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.374      ;
+; -1.430 ; cuenta[7]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.370      ;
+; -1.428 ; cuenta[14] ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; -0.068     ; 2.355      ;
+; -1.422 ; cuenta[1]  ; cuenta[13] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.362      ;
+; -1.421 ; cuenta[12] ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.678      ;
+; -1.419 ; cuenta[4]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.676      ;
+; -1.413 ; cuenta[3]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.353      ;
+; -1.412 ; cuenta[2]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.262      ; 2.669      ;
+; -1.411 ; cuenta[12] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.350      ;
+; -1.407 ; cuenta[2]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.347      ;
+; -1.406 ; cuenta[3]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.056     ; 2.345      ;
+; -1.398 ; cuenta[3]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.055     ; 2.338      ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clockDiv'                                                                 ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 0.299 ; salida     ; salida     ; clockDiv     ; clockDiv    ; 0.000        ; 0.068      ; 0.511      ;
+; 0.503 ; cuenta[5]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.702      ;
+; 0.504 ; cuenta[6]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.703      ;
+; 0.511 ; cuenta[16] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.710      ;
+; 0.511 ; cuenta[10] ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.710      ;
+; 0.511 ; cuenta[3]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.710      ;
+; 0.512 ; cuenta[24] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.711      ;
+; 0.512 ; cuenta[18] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.711      ;
+; 0.512 ; cuenta[11] ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.711      ;
+; 0.512 ; cuenta[8]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.711      ;
+; 0.512 ; cuenta[2]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.711      ;
+; 0.513 ; cuenta[9]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.712      ;
+; 0.513 ; cuenta[1]  ; cuenta[1]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.712      ;
+; 0.516 ; cuenta[4]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.715      ;
+; 0.526 ; cuenta[0]  ; cuenta[0]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.725      ;
+; 0.697 ; cuenta[20] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.385      ; 1.226      ;
+; 0.748 ; cuenta[5]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.947      ;
+; 0.755 ; cuenta[3]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.954      ;
+; 0.758 ; cuenta[9]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.957      ;
+; 0.758 ; cuenta[1]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.957      ;
+; 0.760 ; cuenta[7]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.959      ;
+; 0.760 ; cuenta[10] ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.959      ;
+; 0.760 ; cuenta[0]  ; cuenta[1]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.959      ;
+; 0.760 ; cuenta[6]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.959      ;
+; 0.761 ; cuenta[2]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.960      ;
+; 0.761 ; cuenta[8]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.960      ;
+; 0.765 ; cuenta[4]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.964      ;
+; 0.767 ; cuenta[16] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.966      ;
+; 0.767 ; cuenta[0]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.966      ;
+; 0.768 ; cuenta[22] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.967      ;
+; 0.768 ; cuenta[2]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.967      ;
+; 0.768 ; cuenta[8]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.967      ;
+; 0.769 ; cuenta[21] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.068      ; 0.981      ;
+; 0.772 ; cuenta[4]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.971      ;
+; 0.779 ; cuenta[22] ; cuenta[22] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.978      ;
+; 0.782 ; cuenta[7]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 0.981      ;
+; 0.792 ; cuenta[18] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.385      ; 1.321      ;
+; 0.823 ; cuenta[22] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.386      ; 1.353      ;
+; 0.825 ; cuenta[24] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.386      ; 1.355      ;
+; 0.844 ; cuenta[5]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.043      ;
+; 0.844 ; cuenta[3]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.043      ;
+; 0.847 ; cuenta[9]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.046      ;
+; 0.847 ; cuenta[1]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.046      ;
+; 0.849 ; cuenta[7]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.048      ;
+; 0.849 ; cuenta[6]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.048      ;
+; 0.851 ; cuenta[3]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.050      ;
+; 0.854 ; cuenta[1]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.053      ;
+; 0.856 ; cuenta[7]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.055      ;
+; 0.856 ; cuenta[0]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.055      ;
+; 0.856 ; cuenta[6]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.055      ;
+; 0.857 ; cuenta[2]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.056      ;
+; 0.857 ; cuenta[8]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.056      ;
+; 0.863 ; cuenta[0]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.062      ;
+; 0.864 ; cuenta[2]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.063      ;
+; 0.865 ; cuenta[20] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.064      ;
+; 0.868 ; cuenta[25] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.068      ; 1.080      ;
+; 0.868 ; cuenta[4]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.067      ;
+; 0.873 ; cuenta[20] ; cuenta[20] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.072      ;
+; 0.887 ; cuenta[16] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.385      ; 1.416      ;
+; 0.892 ; cuenta[15] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.054      ; 1.090      ;
+; 0.906 ; cuenta[19] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.384      ; 1.434      ;
+; 0.920 ; cuenta[20] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.386      ; 1.450      ;
+; 0.921 ; cuenta[22] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.386      ; 1.451      ;
+; 0.929 ; cuenta[17] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.054      ; 1.127      ;
+; 0.932 ; cuenta[11] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.385      ; 1.461      ;
+; 0.933 ; cuenta[5]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.132      ;
+; 0.940 ; cuenta[5]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.139      ;
+; 0.942 ; cuenta[10] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.385      ; 1.471      ;
+; 0.943 ; cuenta[1]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.142      ;
+; 0.945 ; cuenta[7]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.144      ;
+; 0.945 ; cuenta[6]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.144      ;
+; 0.947 ; cuenta[3]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.146      ;
+; 0.950 ; cuenta[1]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.149      ;
+; 0.950 ; cuenta[11] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.054      ; 1.148      ;
+; 0.952 ; cuenta[0]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.151      ;
+; 0.956 ; cuenta[13] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.385      ; 1.485      ;
+; 0.957 ; cuenta[4]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.156      ;
+; 0.959 ; cuenta[0]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.158      ;
+; 0.960 ; cuenta[18] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.159      ;
+; 0.960 ; cuenta[2]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.159      ;
+; 0.960 ; cuenta[10] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.054      ; 1.158      ;
+; 0.964 ; cuenta[4]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.163      ;
+; 0.974 ; cuenta[13] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.054      ; 1.172      ;
+; 0.988 ; cuenta[15] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.054      ; 1.186      ;
+; 1.015 ; cuenta[18] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.386      ; 1.545      ;
+; 1.018 ; cuenta[20] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.386      ; 1.548      ;
+; 1.019 ; cuenta[6]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.218      ;
+; 1.029 ; cuenta[9]  ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.385      ; 1.558      ;
+; 1.029 ; cuenta[5]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.228      ;
+; 1.036 ; cuenta[20] ; cuenta[22] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.235      ;
+; 1.036 ; cuenta[3]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.235      ;
+; 1.039 ; cuenta[17] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.384      ; 1.567      ;
+; 1.039 ; cuenta[8]  ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.385      ; 1.568      ;
+; 1.043 ; cuenta[19] ; cuenta[19] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.242      ;
+; 1.043 ; cuenta[3]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.242      ;
+; 1.046 ; cuenta[1]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.245      ;
+; 1.046 ; cuenta[11] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.054      ; 1.244      ;
+; 1.047 ; cuenta[9]  ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.054      ; 1.245      ;
+; 1.049 ; cuenta[2]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.248      ;
+; 1.053 ; cuenta[4]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.055      ; 1.252      ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'clockDiv'                                                               ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clockDiv ; Rise       ; clockDiv                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[0]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[10]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[11]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[12]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[13]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[14]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[15]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[16]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[17]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[18]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[19]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[1]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[20]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[21]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[22]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[23]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[24]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[25]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[2]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[3]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[4]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[5]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[6]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[7]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[8]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[9]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; salida                         ;
+; 0.177  ; 0.361        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[14]                     ;
+; 0.177  ; 0.361        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[21]                     ;
+; 0.177  ; 0.361        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[23]                     ;
+; 0.177  ; 0.361        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[25]                     ;
+; 0.177  ; 0.361        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; salida                         ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[16]                     ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[18]                     ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[20]                     ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[22]                     ;
+; 0.182  ; 0.366        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[24]                     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[0]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[10]                     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[11]                     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[12]                     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[13]                     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[15]                     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[17]                     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[19]                     ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[1]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[2]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[3]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[4]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[5]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[6]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[7]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[8]                      ;
+; 0.183  ; 0.367        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[9]                      ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[14]|clk                 ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[21]|clk                 ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[23]|clk                 ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[25]|clk                 ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; salida|clk                     ;
+; 0.339  ; 0.339        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~input|o               ;
+; 0.342  ; 0.342        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[16]|clk                 ;
+; 0.342  ; 0.342        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[18]|clk                 ;
+; 0.342  ; 0.342        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[20]|clk                 ;
+; 0.342  ; 0.342        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[22]|clk                 ;
+; 0.342  ; 0.342        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[24]|clk                 ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[0]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[10]|clk                 ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[11]|clk                 ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[12]|clk                 ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[13]|clk                 ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[15]|clk                 ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[17]|clk                 ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[19]|clk                 ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[1]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[2]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[3]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[4]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[5]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[6]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[7]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[8]|clk                  ;
+; 0.343  ; 0.343        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[9]|clk                  ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~inputclkctrl|inclk[0] ;
+; 0.348  ; 0.348        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~inputclkctrl|outclk   ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[0]                      ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[10]                     ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[11]                     ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[12]                     ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[13]                     ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[15]                     ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[17]                     ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[19]                     ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[1]                      ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[2]                      ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[3]                      ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[4]                      ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[5]                      ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[6]                      ;
+; 0.416  ; 0.632        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[7]                      ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; divided_clk ; clockDiv   ; 5.674 ; 5.647 ; Rise       ; clockDiv        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; divided_clk ; clockDiv   ; 5.559 ; 5.532 ; Rise       ; clockDiv        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++----------+--------+----------------+
+; Clock    ; Slack  ; End Point TNS  ;
++----------+--------+----------------+
+; clockDiv ; -0.740 ; -9.682         ;
++----------+--------+----------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++----------+-------+----------------+
+; Clock    ; Slack ; End Point TNS  ;
++----------+-------+----------------+
+; clockDiv ; 0.179 ; 0.000          ;
++----------+-------+----------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++----------+--------+------------------------------+
+; Clock    ; Slack  ; End Point TNS                ;
++----------+--------+------------------------------+
+; clockDiv ; -3.000 ; -31.653                      ;
++----------+--------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clockDiv'                                                                 ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; -0.740 ; cuenta[1]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.691      ;
+; -0.733 ; cuenta[1]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.684      ;
+; -0.707 ; cuenta[1]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.846      ;
+; -0.694 ; cuenta[4]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.645      ;
+; -0.694 ; cuenta[0]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.833      ;
+; -0.691 ; cuenta[0]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.642      ;
+; -0.690 ; cuenta[1]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.641      ;
+; -0.684 ; cuenta[0]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.635      ;
+; -0.677 ; cuenta[14] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.232     ; 1.432      ;
+; -0.677 ; cuenta[0]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.628      ;
+; -0.670 ; cuenta[3]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.621      ;
+; -0.664 ; cuenta[21] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.231     ; 1.420      ;
+; -0.663 ; cuenta[3]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.614      ;
+; -0.658 ; cuenta[2]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.609      ;
+; -0.645 ; cuenta[4]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.596      ;
+; -0.644 ; cuenta[20] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.035     ; 1.596      ;
+; -0.640 ; cuenta[10] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.591      ;
+; -0.637 ; cuenta[1]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.776      ;
+; -0.637 ; cuenta[3]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.776      ;
+; -0.631 ; cuenta[1]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.582      ;
+; -0.628 ; cuenta[14] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.232     ; 1.383      ;
+; -0.626 ; cuenta[2]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.765      ;
+; -0.624 ; cuenta[0]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.763      ;
+; -0.622 ; cuenta[8]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.573      ;
+; -0.621 ; cuenta[11] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.572      ;
+; -0.620 ; cuenta[3]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.571      ;
+; -0.620 ; cuenta[4]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.571      ;
+; -0.617 ; cuenta[2]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.568      ;
+; -0.615 ; cuenta[6]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.566      ;
+; -0.615 ; cuenta[21] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.231     ; 1.371      ;
+; -0.614 ; cuenta[4]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.565      ;
+; -0.613 ; cuenta[4]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.564      ;
+; -0.612 ; cuenta[1]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.563      ;
+; -0.611 ; cuenta[1]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.562      ;
+; -0.609 ; cuenta[2]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.560      ;
+; -0.609 ; cuenta[2]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.560      ;
+; -0.606 ; cuenta[1]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.557      ;
+; -0.603 ; cuenta[14] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.232     ; 1.358      ;
+; -0.599 ; cuenta[0]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.550      ;
+; -0.598 ; cuenta[5]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.549      ;
+; -0.597 ; cuenta[14] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.232     ; 1.352      ;
+; -0.596 ; cuenta[14] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.232     ; 1.351      ;
+; -0.595 ; cuenta[20] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.035     ; 1.547      ;
+; -0.593 ; cuenta[11] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.544      ;
+; -0.593 ; cuenta[19] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.544      ;
+; -0.593 ; cuenta[0]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.544      ;
+; -0.591 ; cuenta[5]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.542      ;
+; -0.591 ; cuenta[10] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.542      ;
+; -0.590 ; cuenta[21] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.231     ; 1.346      ;
+; -0.589 ; cuenta[22] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.035     ; 1.541      ;
+; -0.584 ; cuenta[21] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.231     ; 1.340      ;
+; -0.583 ; cuenta[4]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.534      ;
+; -0.583 ; cuenta[3]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.534      ;
+; -0.583 ; cuenta[21] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.231     ; 1.339      ;
+; -0.582 ; cuenta[0]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.533      ;
+; -0.578 ; cuenta[2]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.529      ;
+; -0.577 ; cuenta[2]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.528      ;
+; -0.573 ; cuenta[8]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.524      ;
+; -0.570 ; cuenta[20] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.035     ; 1.522      ;
+; -0.567 ; cuenta[3]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.706      ;
+; -0.566 ; cuenta[6]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.517      ;
+; -0.566 ; cuenta[10] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.517      ;
+; -0.566 ; cuenta[14] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.232     ; 1.321      ;
+; -0.565 ; cuenta[5]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.704      ;
+; -0.564 ; cuenta[25] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.232     ; 1.319      ;
+; -0.564 ; cuenta[20] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.035     ; 1.516      ;
+; -0.563 ; cuenta[20] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.035     ; 1.515      ;
+; -0.562 ; cuenta[1]  ; cuenta[13] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.513      ;
+; -0.562 ; cuenta[0]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.513      ;
+; -0.561 ; cuenta[3]  ; cuenta[24] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.512      ;
+; -0.560 ; cuenta[10] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.511      ;
+; -0.559 ; cuenta[10] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.510      ;
+; -0.558 ; cuenta[4]  ; cuenta[25] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.697      ;
+; -0.556 ; cuenta[2]  ; cuenta[23] ; clockDiv     ; clockDiv    ; 1.000        ; 0.152      ; 1.695      ;
+; -0.553 ; cuenta[21] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.231     ; 1.309      ;
+; -0.552 ; cuenta[3]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.503      ;
+; -0.551 ; cuenta[12] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.502      ;
+; -0.551 ; cuenta[3]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.502      ;
+; -0.550 ; cuenta[17] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.501      ;
+; -0.550 ; cuenta[15] ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.501      ;
+; -0.549 ; cuenta[0]  ; cuenta[13] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.500      ;
+; -0.548 ; cuenta[5]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.499      ;
+; -0.548 ; cuenta[8]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.499      ;
+; -0.544 ; cuenta[12] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.495      ;
+; -0.544 ; cuenta[19] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.495      ;
+; -0.544 ; cuenta[11] ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.495      ;
+; -0.542 ; cuenta[3]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.493      ;
+; -0.542 ; cuenta[8]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.493      ;
+; -0.541 ; cuenta[6]  ; cuenta[19] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.492      ;
+; -0.541 ; cuenta[8]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.492      ;
+; -0.540 ; cuenta[22] ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.035     ; 1.492      ;
+; -0.539 ; cuenta[7]  ; cuenta[20] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.490      ;
+; -0.538 ; cuenta[11] ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.489      ;
+; -0.537 ; cuenta[11] ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.488      ;
+; -0.536 ; cuenta[1]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.487      ;
+; -0.535 ; cuenta[6]  ; cuenta[12] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.486      ;
+; -0.534 ; cuenta[6]  ; cuenta[17] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.485      ;
+; -0.533 ; cuenta[20] ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.035     ; 1.485      ;
+; -0.532 ; cuenta[7]  ; cuenta[22] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.483      ;
+; -0.531 ; cuenta[2]  ; cuenta[15] ; clockDiv     ; clockDiv    ; 1.000        ; -0.036     ; 1.482      ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clockDiv'                                                                 ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 0.179 ; salida     ; salida     ; clockDiv     ; clockDiv    ; 0.000        ; 0.044      ; 0.307      ;
+; 0.298 ; cuenta[5]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.418      ;
+; 0.299 ; cuenta[6]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.419      ;
+; 0.304 ; cuenta[3]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.424      ;
+; 0.305 ; cuenta[11] ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.425      ;
+; 0.305 ; cuenta[10] ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.425      ;
+; 0.305 ; cuenta[9]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.425      ;
+; 0.305 ; cuenta[2]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.425      ;
+; 0.306 ; cuenta[16] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.425      ;
+; 0.306 ; cuenta[8]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.426      ;
+; 0.306 ; cuenta[4]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.426      ;
+; 0.306 ; cuenta[1]  ; cuenta[1]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.426      ;
+; 0.307 ; cuenta[24] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.426      ;
+; 0.307 ; cuenta[18] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.426      ;
+; 0.314 ; cuenta[0]  ; cuenta[0]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.434      ;
+; 0.422 ; cuenta[20] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.231      ; 0.737      ;
+; 0.447 ; cuenta[5]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.567      ;
+; 0.452 ; cuenta[21] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.043      ; 0.579      ;
+; 0.453 ; cuenta[3]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.573      ;
+; 0.454 ; cuenta[9]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.574      ;
+; 0.455 ; cuenta[1]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.575      ;
+; 0.456 ; cuenta[7]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.576      ;
+; 0.459 ; cuenta[22] ; cuenta[22] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.578      ;
+; 0.460 ; cuenta[7]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.580      ;
+; 0.460 ; cuenta[6]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.580      ;
+; 0.463 ; cuenta[2]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.583      ;
+; 0.463 ; cuenta[10] ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.583      ;
+; 0.463 ; cuenta[0]  ; cuenta[1]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.583      ;
+; 0.464 ; cuenta[4]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.584      ;
+; 0.464 ; cuenta[8]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.584      ;
+; 0.466 ; cuenta[2]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.586      ;
+; 0.466 ; cuenta[0]  ; cuenta[2]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.586      ;
+; 0.467 ; cuenta[16] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.586      ;
+; 0.467 ; cuenta[4]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.587      ;
+; 0.467 ; cuenta[8]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.587      ;
+; 0.468 ; cuenta[22] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.587      ;
+; 0.487 ; cuenta[18] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.231      ; 0.802      ;
+; 0.493 ; cuenta[22] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.809      ;
+; 0.494 ; cuenta[25] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.044      ; 0.622      ;
+; 0.495 ; cuenta[24] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.811      ;
+; 0.513 ; cuenta[5]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.633      ;
+; 0.516 ; cuenta[3]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.636      ;
+; 0.517 ; cuenta[9]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.637      ;
+; 0.518 ; cuenta[1]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.638      ;
+; 0.519 ; cuenta[7]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.639      ;
+; 0.519 ; cuenta[3]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.639      ;
+; 0.520 ; cuenta[20] ; cuenta[20] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.639      ;
+; 0.521 ; cuenta[1]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.641      ;
+; 0.522 ; cuenta[7]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.642      ;
+; 0.523 ; cuenta[15] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.642      ;
+; 0.523 ; cuenta[6]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.643      ;
+; 0.526 ; cuenta[6]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.646      ;
+; 0.529 ; cuenta[2]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.649      ;
+; 0.529 ; cuenta[0]  ; cuenta[3]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.649      ;
+; 0.530 ; cuenta[8]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.650      ;
+; 0.532 ; cuenta[2]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.652      ;
+; 0.532 ; cuenta[0]  ; cuenta[4]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.652      ;
+; 0.533 ; cuenta[4]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.653      ;
+; 0.535 ; cuenta[20] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.654      ;
+; 0.538 ; cuenta[19] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.231      ; 0.853      ;
+; 0.540 ; cuenta[17] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.659      ;
+; 0.547 ; cuenta[13] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.863      ;
+; 0.551 ; cuenta[11] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.867      ;
+; 0.552 ; cuenta[16] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.231      ; 0.867      ;
+; 0.560 ; cuenta[20] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.876      ;
+; 0.561 ; cuenta[22] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.877      ;
+; 0.563 ; cuenta[10] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.879      ;
+; 0.576 ; cuenta[5]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.696      ;
+; 0.579 ; cuenta[5]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.699      ;
+; 0.583 ; cuenta[13] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.702      ;
+; 0.584 ; cuenta[1]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.704      ;
+; 0.585 ; cuenta[7]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.705      ;
+; 0.585 ; cuenta[3]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.705      ;
+; 0.587 ; cuenta[1]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.707      ;
+; 0.587 ; cuenta[11] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.706      ;
+; 0.589 ; cuenta[15] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.708      ;
+; 0.589 ; cuenta[6]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.709      ;
+; 0.595 ; cuenta[19] ; cuenta[19] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.715      ;
+; 0.595 ; cuenta[0]  ; cuenta[5]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.715      ;
+; 0.596 ; cuenta[4]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.716      ;
+; 0.598 ; cuenta[2]  ; cuenta[8]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.718      ;
+; 0.598 ; cuenta[0]  ; cuenta[6]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.718      ;
+; 0.599 ; cuenta[4]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.719      ;
+; 0.599 ; cuenta[10] ; cuenta[16] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.718      ;
+; 0.600 ; cuenta[18] ; cuenta[24] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.719      ;
+; 0.605 ; cuenta[17] ; cuenta[17] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.725      ;
+; 0.605 ; cuenta[23] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.044      ; 0.733      ;
+; 0.610 ; cuenta[6]  ; cuenta[7]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.730      ;
+; 0.614 ; cuenta[14] ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.044      ; 0.742      ;
+; 0.617 ; cuenta[9]  ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.933      ;
+; 0.621 ; cuenta[20] ; cuenta[22] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.740      ;
+; 0.625 ; cuenta[17] ; cuenta[21] ; clockDiv     ; clockDiv    ; 0.000        ; 0.231      ; 0.940      ;
+; 0.625 ; cuenta[18] ; cuenta[23] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.941      ;
+; 0.628 ; cuenta[20] ; cuenta[25] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.944      ;
+; 0.630 ; cuenta[8]  ; cuenta[14] ; clockDiv     ; clockDiv    ; 0.000        ; 0.232      ; 0.946      ;
+; 0.642 ; cuenta[5]  ; cuenta[11] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.762      ;
+; 0.647 ; cuenta[15] ; cuenta[15] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.767      ;
+; 0.648 ; cuenta[3]  ; cuenta[9]  ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.768      ;
+; 0.649 ; cuenta[13] ; cuenta[18] ; clockDiv     ; clockDiv    ; 0.000        ; 0.035      ; 0.768      ;
+; 0.651 ; cuenta[3]  ; cuenta[10] ; clockDiv     ; clockDiv    ; 0.000        ; 0.036      ; 0.771      ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'clockDiv'                                                               ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clockDiv ; Rise       ; clockDiv                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[0]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[10]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[11]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[12]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[13]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[14]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[15]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[16]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[17]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[18]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[19]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[1]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[20]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[21]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[22]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[23]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[24]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[25]                     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[2]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[3]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[4]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[5]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[6]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[7]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[8]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; cuenta[9]                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clockDiv ; Rise       ; salida                         ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[21]                     ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[14]                     ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[23]                     ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[25]                     ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; salida                         ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[0]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[10]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[11]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[12]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[13]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[15]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[16]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[17]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[18]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[19]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[1]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[20]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[22]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[24]                     ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[2]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[3]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[4]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[5]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[6]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[7]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[8]                      ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[9]                      ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[21]|clk                 ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[14]|clk                 ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[23]|clk                 ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[25]|clk                 ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; salida|clk                     ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~input|o               ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[0]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[10]|clk                 ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[11]|clk                 ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[12]|clk                 ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[13]|clk                 ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[15]|clk                 ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[17]|clk                 ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[19]|clk                 ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[1]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[2]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[3]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[4]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[5]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[6]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[7]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[8]|clk                  ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[9]|clk                  ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[16]|clk                 ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[18]|clk                 ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[20]|clk                 ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[22]|clk                 ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; cuenta[24]|clk                 ;
+; 0.132  ; 0.132        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~inputclkctrl|inclk[0] ;
+; 0.132  ; 0.132        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~inputclkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clockDiv ; Rise       ; clockDiv~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clockDiv ; Rise       ; clockDiv~input|i               ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[16]                     ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[18]                     ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[20]                     ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[22]                     ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[24]                     ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[0]                      ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[10]                     ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[11]                     ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[12]                     ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[13]                     ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[15]                     ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[17]                     ;
+; 0.655  ; 0.871        ; 0.216          ; High Pulse Width ; clockDiv ; Rise       ; cuenta[19]                     ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; divided_clk ; clockDiv   ; 3.579 ; 3.615 ; Rise       ; clockDiv        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; divided_clk ; clockDiv   ; 3.505 ; 3.539 ; Rise       ; clockDiv        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.075  ; 0.179 ; N/A      ; N/A     ; -3.000              ;
+;  clockDiv        ; -2.075  ; 0.179 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -36.17  ; 0.0   ; 0.0      ; 0.0     ; -31.653             ;
+;  clockDiv        ; -36.170 ; 0.000 ; N/A      ; N/A     ; -31.653             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; divided_clk ; clockDiv   ; 5.971 ; 5.970 ; Rise       ; clockDiv        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; divided_clk ; clockDiv   ; 3.505 ; 3.539 ; Rise       ; clockDiv        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; divided_clk   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; clockDiv                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; resetDiv                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; divided_clk   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.25e-07 V                   ; 2.35 V              ; -0.0111 V           ; 0.113 V                              ; 0.035 V                              ; 7.76e-10 s                  ; 8.04e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.25e-07 V                  ; 2.35 V             ; -0.0111 V          ; 0.113 V                             ; 0.035 V                             ; 7.76e-10 s                 ; 8.04e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.68e-07 V                   ; 2.35 V              ; -0.0132 V           ; 0.2 V                                ; 0.027 V                              ; 5.26e-10 s                  ; 4.81e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.68e-07 V                  ; 2.35 V             ; -0.0132 V          ; 0.2 V                               ; 0.027 V                             ; 5.26e-10 s                 ; 4.81e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.36e-07 V                   ; 2.35 V              ; -0.00444 V          ; 0.18 V                               ; 0.019 V                              ; 7.23e-10 s                  ; 9.82e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.36e-07 V                  ; 2.35 V             ; -0.00444 V         ; 0.18 V                              ; 0.019 V                             ; 7.23e-10 s                 ; 9.82e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; divided_clk   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-08 V                   ; 2.71 V              ; -0.0349 V           ; 0.253 V                              ; 0.069 V                              ; 4.96e-10 s                  ; 5.19e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-08 V                  ; 2.71 V             ; -0.0349 V          ; 0.253 V                             ; 0.069 V                             ; 4.96e-10 s                 ; 5.19e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.72 V              ; -0.0747 V           ; 0.28 V                               ; 0.169 V                              ; 3.1e-10 s                   ; 3.01e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.72 V             ; -0.0747 V          ; 0.28 V                              ; 0.169 V                             ; 3.1e-10 s                  ; 3.01e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.53e-08 V                   ; 2.7 V               ; -0.0212 V           ; 0.204 V                              ; 0.049 V                              ; 4.85e-10 s                  ; 6.73e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.53e-08 V                  ; 2.7 V              ; -0.0212 V          ; 0.204 V                             ; 0.049 V                             ; 4.85e-10 s                 ; 6.73e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clockDiv   ; clockDiv ; 690      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clockDiv   ; clockDiv ; 690      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 27    ; 27   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Thu Mar 07 21:58:37 2024
+Info: Command: quartus_sta DivFreq50 -c DivFreq50
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 10 of the 10 physical processors detected instead.
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'DivFreq50.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clockDiv clockDiv
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.075
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.075             -36.170 clockDiv 
+Info (332146): Worst-case hold slack is 0.344
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.344               0.000 clockDiv 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -30.000 clockDiv 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.702
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.702             -28.992 clockDiv 
+Info (332146): Worst-case hold slack is 0.299
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.299               0.000 clockDiv 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -30.000 clockDiv 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.740
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.740              -9.682 clockDiv 
+Info (332146): Worst-case hold slack is 0.179
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.179               0.000 clockDiv 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -31.653 clockDiv 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4759 megabytes
+    Info: Processing ended: Thu Mar 07 21:58:39 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:00
+
+

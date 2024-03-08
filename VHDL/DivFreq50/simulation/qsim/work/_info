@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\ASUS\Documents\VHDL\DivFreq50\simulation\qsim
+vDivFreq50
+Z1 IHP;Ic>kQJIV0OEZLRckcG2
+Z2 V8lz2F4G38l36<T_fg6Dfj0
+Z3 dC:\Users\ASUS\Documents\VHDL\DivFreq50\simulation\qsim
+Z4 w1709866788
+Z5 8DivFreq50.vo
+Z6 FDivFreq50.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|DivFreq50.vo|
+Z9 o-work work -O0
+Z10 n@div@freq50
+!i10b 1
+Z11 !s100 jzmIE0CiS3^;fhl_?9gm;1
+!s85 0
+Z12 !s108 1709866789.175000
+Z13 !s107 DivFreq50.vo|
+!s101 -O0
+vDivFreq50_vlg_check_tst
+!i10b 1
+!s100 g>BgSKcd1_F7bMAe>`kW`2
+IMSKl^TM`h_8>I4b=h@DgR3
+VHN<=k02jlaE5MN0VFK[5?0
+R3
+Z14 w1709866787
+Z15 8Waveform.vwf.vt
+Z16 FWaveform.vwf.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z17 !s108 1709866789.234000
+Z18 !s107 Waveform.vwf.vt|
+Z19 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R9
+Z20 n@div@freq50_vlg_check_tst
+vDivFreq50_vlg_sample_tst
+!i10b 1
+!s100 aHDieRaPdC:7YbQTEan@G2
+I=KR]J_A^KR9gLB[<JYce>3
+VRkM38Uo@4<h53[8e[R@Df0
+R3
+R14
+R15
+R16
+L0 29
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R9
+Z21 n@div@freq50_vlg_sample_tst
+vDivFreq50_vlg_vec_tst
+!i10b 1
+!s100 6^E2N9cS`MSzGU]4R2KC12
+ImOBQeh]DUm^3gRCS>m:T`1
+Z22 ViUDLk?izBNNaH6kNDHFcd3
+R3
+R14
+R15
+R16
+L0 154
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R9
+Z23 n@div@freq50_vlg_vec_tst
