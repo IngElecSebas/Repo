@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\DELL\Documents\VHDL\Microcontrolador\output_ports\simulation\qsim
+voutputPorts
+Z1 !s100 SYNaEL^7^ndzEE7J=UeY>0
+Z2 I?@7@;X61cX5cYo5_0ik6j3
+Z3 VglbN6E`oV:_Mg3?;IP7D`2
+Z4 dC:\Users\DELL\Documents\VHDL\Microcontrolador\output_ports\simulation\qsim
+Z5 w1716484124
+Z6 8outputPorts.vo
+Z7 FoutputPorts.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|outputPorts.vo|
+Z10 o-work work -O0
+Z11 noutput@ports
+!i10b 1
+!s85 0
+Z12 !s108 1716484125.077000
+Z13 !s107 outputPorts.vo|
+!s101 -O0
+voutputPorts_vlg_check_tst
+!i10b 1
+Z14 !s100 ;W=c@m_AcB?<G@YdmRTiH3
+Z15 I@=U]Z60f5ScV`9;IC2_HA2
+Z16 ViPib;idKO7hjcP;Q:ZQRE0
+R4
+Z17 w1716484123
+Z18 8DiagramaDeTiempo.vwf.vt
+Z19 FDiagramaDeTiempo.vwf.vt
+L0 65
+R8
+r1
+!s85 0
+31
+Z20 !s108 1716484125.140000
+Z21 !s107 DiagramaDeTiempo.vwf.vt|
+Z22 !s90 -work|work|DiagramaDeTiempo.vwf.vt|
+!s101 -O0
+R10
+Z23 noutput@ports_vlg_check_tst
+voutputPorts_vlg_sample_tst
+!i10b 1
+Z24 !s100 ZLi7Y<JgBazc?FH1NDe_d2
+Z25 IHlE628aOY:2_hi6cUJCWU1
+Z26 Vd_Gzhj6CInC8cgYe:>MBP2
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 noutput@ports_vlg_sample_tst
+voutputPorts_vlg_vec_tst
+!i10b 1
+Z28 !s100 @a1W7Og?]7@Oe`END_@f=3
+Z29 IQf3WJffV0c8QgU<2CXGQ<2
+Z30 V]]kjE;VENdZT2_VG]`4fZ3
+R4
+R17
+R18
+R19
+Z31 L0 437
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 noutput@ports_vlg_vec_tst

@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity memory is
+    Port (
+        clock : in std_logic;
+        reset : in std_logic;
+        address : in std_logic_vector(7 downto 0);
+        data_in : in std_logic_vector(7 downto 0);
+        write : in std_logic;
+        data_out : out std_logic_vector(7 downto 0);
+        port_out_xx : out std_logic_vector(15 downto 0);
+        port_in_xx : in std_logic_vector(127 downto 0)  -- 16x8 bits
+    );
+end memory;

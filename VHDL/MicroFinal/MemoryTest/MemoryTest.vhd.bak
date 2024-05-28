@@ -1,0 +1,68 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity MemoryTest is
+    Port (
+        clock : in std_logic;
+        reset : in std_logic;
+        address : in std_logic_vector(7 downto 0);
+        data_in : in std_logic_vector(7 downto 0);
+        write_memory : in std_logic;
+        port_out_00 : out std_logic_vector(7 downto 0);
+        port_out_01 : out std_logic_vector(7 downto 0)
+    );
+end MemoryTest;
+
+architecture Behavioral of MemoryTest is
+    component memory
+        Port (
+            clock : in std_logic;
+            reset : in std_logic;
+            address : in std_logic_vector(7 downto 0);
+            data_in : in std_logic_vector(7 downto 0);
+            write_memory : in std_logic;
+            data_out : out std_logic_vector(7 downto 0);
+            port_out_00 : out std_logic_vector(7 downto 0);
+            port_out_01 : out std_logic_vector(7 downto 0);
+            port_in_00 : in std_logic_vector(7 downto 0);
+            port_in_01 : in std_logic_vector(7 downto 0)
+        );
+    end component;
+
+    component display7seg
+        Port (
+            input_data : in std_logic_vector(7 downto 0);
+            segments : out std_logic_vector(6 downto 0)
+        );
+    end component;
+
+    signal data_out_memory : std_logic_vector(7 downto 0);
+    signal segments_display : std_logic_vector(6 downto 0);
+
+begin
+    -- Instancia de la memoria
+    U1: memory
+        port map (
+            clock => clock,
+            reset => reset,
+            address => address,
+            data_in => data_in,
+            write_memory => write_memory,
+            data_out => data_out_memory,
+            port_out_00 => port_out_00,
+            port_out_01 => port_out_01,
+            port_in_00 => (others => '0'), -- Debes proporcionar datos de entrada adecuados
+            port_in_01 => (others => '0')  -- Debes proporcionar datos de entrada adecuados
+        );
+
+    -- Instancia del display de 7 segmentos
+    U2: display7seg
+        port map (
+            input_data => data_out_memory, -- Muestra los datos de salida de la memoria en el display
+            segments => segments_display
+        );
+
+    -- Aquí podrías agregar más lógica según sea necesario
+
+end Behavioral;

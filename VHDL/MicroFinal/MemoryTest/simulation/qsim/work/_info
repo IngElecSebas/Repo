@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\ASUS\Desktop\MicrocontroladorFina\Microcontrolador\MemoryTest\simulation\qsim
+vMemoryTest
+Z1 I10;=NL_]93WP_@T>5lM^F0
+Z2 VPRgoL<m=^HM2W?6PG]9LN2
+Z3 dC:\Users\ASUS\Desktop\MicrocontroladorFina\Microcontrolador\MemoryTest\simulation\qsim
+Z4 w1716929038
+Z5 8MemoryTest.vo
+Z6 FMemoryTest.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@memory@test
+!i10b 1
+Z10 !s100 7=f?MAk=D@RQWAW_Q=NgP0
+!s85 0
+Z11 !s108 1716929040.222000
+Z12 !s107 MemoryTest.vo|
+Z13 !s90 -work|work|MemoryTest.vo|
+!s101 -O0
+vMemoryTest_vlg_check_tst
+!i10b 1
+!s100 5`U6^>0C4_<iTLZW?XAMQ2
+I:GSJQ=VUhP<kR2Zb]zkFh1
+VFhB1mUPg^NmCaUgM;YM5z2
+R3
+Z14 w1716929037
+Z15 8Waveform.vwf.vt
+Z16 FWaveform.vwf.vt
+L0 65
+R7
+r1
+!s85 0
+31
+Z17 !s108 1716929040.520000
+Z18 !s107 Waveform.vwf.vt|
+Z19 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R8
+n@memory@test_vlg_check_tst
+vMemoryTest_vlg_sample_tst
+!i10b 1
+!s100 F0H=0ho2OYFE`dbl?Yc8X3
+IA5AMNRRHX`36V;SgCIRiT1
+Vm9NRR7z<nHIkg8A6oz5kD3
+R3
+R14
+R15
+R16
+L0 29
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R8
+n@memory@test_vlg_sample_tst
+vMemoryTest_vlg_vec_tst
+!i10b 1
+!s100 l:LWzg<E>O3RR=6am[6Qz3
+I:Yc^6Nnl_Q8?h`U;o2G;T2
+VhK]_j8_YVH:gZXbP9><eS2
+R3
+R14
+R15
+R16
+L0 973
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R8
+n@memory@test_vlg_vec_tst
