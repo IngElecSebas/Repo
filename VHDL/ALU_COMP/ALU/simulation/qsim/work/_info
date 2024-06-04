@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Samuel\Desktop\Lab-Quartus\Tercer_corte_ALU\ALU\simulation\qsim
+vALU
+Z1 !s100 Jjae2fCKa8bD@jZBhj_263
+Z2 ISo?V;aZ0BH;Y`3bVzLUa^1
+Z3 VDb^9_]5Fe8zZMJ2O7k2Ne3
+Z4 dC:\Users\ASUS\Documents\VHDL\Tercer_corte_ALU\ALU\simulation\qsim
+Z5 w1717174820
+Z6 8ALU.vo
+Z7 FALU.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|ALU.vo|
+Z10 o-work work -O0
+Z11 n@a@l@u
+!i10b 1
+!s85 0
+Z12 !s108 1717174821.100000
+Z13 !s107 ALU.vo|
+!s101 -O0
+vALU_vlg_check_tst
+!i10b 1
+Z14 !s100 BFAj1^L[g_`e3Zi]ln7YT2
+Z15 If_jiRC5:=`]`GPiIYVg2D0
+Z16 VjQdXMOcHzhnnjJn3ijG]I2
+R4
+Z17 w1717174819
+Z18 8Waveform.vwf.vt
+Z19 FWaveform.vwf.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z20 !s108 1717174821.132000
+Z21 !s107 Waveform.vwf.vt|
+Z22 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+Z23 n@a@l@u_vlg_check_tst
+vALU_vlg_sample_tst
+!i10b 1
+Z24 !s100 U@VO:`Q_R4`2<TGQSZgYj1
+Z25 I>8DQfa8RzRWGIhbe[?j?42
+Z26 Vb8@02RFbADSo90KM4coGZ1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@a@l@u_vlg_sample_tst
+vALU_vlg_vec_tst
+!i10b 1
+Z28 !s100 diO^WEN^]`[=fFJaSKdV52
+Z29 IR0FUE<CX^SNWWhgJNaDL^0
+Z30 V>bFnnU[^IecCM5^<l3;]W0
+R4
+R17
+R18
+R19
+Z31 L0 361
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@a@l@u_vlg_vec_tst
